@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Color Generator</title>
+    <style>
+        body{
+            font-family: 'Courier New', Courier, monospace;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #bodybg{
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            background: linear-gradient(to top, red, yellow);
+        }
+        #centrediv{
+            width: 100%;
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        h1{
+            font-size: 2.5em;
+            font-weight: bold;
+            color: rgba(0, 0, 0, .8);
+            text-transform: uppercase;
+            letter-spacing: .5em;
+        }
+        h2{
+            font-size: 1.5em;
+            color: rgba(0, 0, 0, .8);
+            text-transform: uppercase;
+            letter-spacing: .5em;
+        }
+        h3{
+            font-size: 1.5em;
+            color: rgba(0, 0, 0, .8);
+            text-transform: uppercase;
+            letter-spacing: .2em;
+            width: 80%;
+            margin: auto;
+        }
+    </style>
+</head>
+<body id="bodybg" >
+
+    <div id="centrediv">
+        <h1>BACKGROUND COLOR GENERATOR</h1>
+        <br><br>
+        <h2>PICK THE COLOR</h2>
+        <br><br>
+        <input type="color" name="" id="colorone" value="#657A99">
+        <input type="color" name="" id="colortwo" value="#95C42B">
+        <br><br>
+        <h3 id="showvalue"></h3>
+    </div>
+
+
+    <script>
+
+const colorone = document.querySelector('#colorone');
+const colortwo = document.getElementById('colortwo');
+const bodybg = document.getElementById('bodybg');
+const showdata =document.getElementById('showvalue');
+
+function a(){
+    bodybg.style.background =`linear-gradient(to right, ${colorone.value}, ${colortwo.value})`;
+
+    showdata.textContent = 
+    `linear-gradient(to right, 
+    ${colorone.value}, ${colortwo.value})`;
+}
+
+colorone.addEventListener('input', setbgcolor);
+colortwo.addEventListener('input', setbgcolor);
+
+    </script>
+</body>
+</html>
