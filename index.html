@@ -16,7 +16,7 @@
             width: 100%;
             height: 100vh;
             position: relative;
-            background: linear-gradient(to top, red, yellow);
+            background: linear-gradient(to bottom, red, yellow);
         }
         #centrediv{
             width: 100%;
@@ -56,7 +56,7 @@
         <br><br>
         <h2>PICK THE COLOR</h2>
         <br><br>
-        <input type="color" name="" id="colorone" value="#657A99">
+        <input type="color" name="" id="colorone" value="#FFFFFF">
         <input type="color" name="" id="colortwo" value="#95C42B">
         <br><br>
         <h3 id="showvalue"></h3>
@@ -65,13 +65,15 @@
 
     <script>
 
-const colorone = document.querySelector('#colorone');
+const colorone = document.getElementById('colorone');
 const colortwo = document.getElementById('colortwo');
 const bodybg = document.getElementById('bodybg');
 const showdata =document.getElementById('showvalue');
 
-function a(){
-    bodybg.style.background =`linear-gradient(to right, ${colorone.value}, ${colortwo.value})`;
+function setbgcolor(){
+    bodybg.style.background =
+    `linear-gradient(to right, ${colorone.value},
+      ${colortwo.value})`;
 
     showdata.textContent = 
     `linear-gradient(to right, 
